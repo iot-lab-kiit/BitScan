@@ -1,15 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.chibatching.kotpref:kotpref:2.11.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c72f6721be4ca5a340dd2e75ad3ccfd1/jetified-kotpref-2.11.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c72f6721be4ca5a340dd2e75ad3ccfd1/jetified-kotpref-2.11.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c72f6721be4ca5a340dd2e75ad3ccfd1/jetified-kotpref-2.11.0/res" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/0d735247b5b5404687838a2b56554942/jetified-kotpref-2.11.0/AndroidManifest.xml" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/0d735247b5b5404687838a2b56554942/jetified-kotpref-2.11.0/jars/classes.jar!/" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/0d735247b5b5404687838a2b56554942/jetified-kotpref-2.11.0/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/kotpref/2.11.0/1378c8f46cb18da6ff5bdc1cea1392232b711bed/kotpref-2.11.0-javadoc.jar!/" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/kotpref/2.11.0/1378c8f46cb18da6ff5bdc1cea1392232b711bed/kotpref-2.11.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/kotpref/2.11.0/e8000d721b33f3a7e02cc3c0c8ce511ccfbd7fe9/kotpref-2.11.0-sources.jar!/" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/kotpref/2.11.0/e8000d721b33f3a7e02cc3c0c8ce511ccfbd7fe9/kotpref-2.11.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

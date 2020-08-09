@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-auth:18.1.0@aar">
+    <CLASSES>
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/4cadbf62c602542f5c7ee57482ba6d50/jetified-play-services-auth-18.1.0/AndroidManifest.xml" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/4cadbf62c602542f5c7ee57482ba6d50/jetified-play-services-auth-18.1.0/jars/classes.jar!/" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/4cadbf62c602542f5c7ee57482ba6d50/jetified-play-services-auth-18.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-auth/18.1.0/8e2bc2fe205549f7dccf3fe0919e3a41d26792c3/play-services-auth-18.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

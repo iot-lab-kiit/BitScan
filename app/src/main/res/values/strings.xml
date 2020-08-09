@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BitScan</string>
+    <string name="welcomeText">Welcome Back!</string>
 </resources>
