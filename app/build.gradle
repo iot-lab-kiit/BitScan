@@ -40,7 +40,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-
     }
 }
 
@@ -54,5 +53,9 @@ dependencies {
     implementation 'com.chibatching.kotpref:initializer:2.11.0'
     implementation 'com.chibatching.kotpref:gson-support:2.11.0'
     implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation project(path: ':java')
 }

@@ -9,4 +9,5 @@
     <string name="adjust_angle">Adjust angle</string>
     <string name="hold_still">Hold still</string>
     <string name="capturing">Capturing image</string>
+    <string name="welcomeText">Welcome Back!</string>
 </resources>

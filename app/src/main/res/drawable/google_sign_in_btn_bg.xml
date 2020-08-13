@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--button focused state background color-->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#676060" />
+            <corners android:radius="15dp"/>
+        </shape>
+    </item>
+
+    <!--button pressed state background color-->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#B7BAB7" />
+            <corners android:radius="15dp"/>
+        </shape>
+    </item>
+
+    <!--button default background color-->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/googleSignInBtnBG" />
+            <corners android:radius="15dp"/>
+        </shape>
+    </item>
+</selector>
