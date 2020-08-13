@@ -14,6 +14,25 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            moduleName = "liveedgedetection"
+            stl = "gnustl_static"
+            abiFilters 'arm64-v8a',  'armeabi-v7a',  'x86', 'x86_64'
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11"
+                arguments "-DANDROID_STL=c++_shared"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
     }
 
     buildTypes {
@@ -21,6 +40,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
 }
 
@@ -34,4 +54,5 @@ dependencies {
     implementation 'com.chibatching.kotpref:initializer:2.11.0'
     implementation 'com.chibatching.kotpref:gson-support:2.11.0'
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation project(path: ':java')
 }
