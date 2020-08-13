@@ -68,6 +68,7 @@ public class PolygonView extends FrameLayout {
         pointer3 = getImageView(0, getHeight());
         pointer4 = getImageView(getWidth(), getHeight());
         midPointer13 = getImageViewTransparent(0, getHeight() / 2);
+        // Small comit
         midPointer13.setOnTouchListener(new MidPointTouchListenerImpl(pointer1, pointer3));
 
         midPointer12 = getImageViewTransparent(0, getWidth() / 2);
