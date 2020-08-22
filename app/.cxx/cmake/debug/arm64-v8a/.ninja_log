@@ -1,0 +1,5 @@
+# ninja log v5
+1	40	0	clean	718fdfb7b44eacd8
+0	20	0	clean	718fdfb7b44eacd8
+2	3789	619812929	CMakeFiles/dummy-lib.dir/dummy-lib.cpp.o	c1e8d7063a063fee
+3794	4172	619812929	C:/Users/KIIT/AndroidStudioProjects/BitScan/app/build/intermediates/cmake/debug/obj/arm64-v8a/libdummy-lib.so	8d2c67e57a3d91a2

@@ -118,8 +118,10 @@ public class ScanSurfaceView extends FrameLayout implements SurfaceHolder.Callba
         if (vWidth == vHeight) {
             return;
         }
-        if (previewSize == null)
-            previewSize = ScanUtils.getOptimalPreviewSize(camera, vWidth, vHeight);
+        if (previewSize == null) {
+            previewSize = ScanUtils.INSTANCE.getOptimalPreviewSize(camera,vWidth,vHeight);
+                    //getOptimalPreviewSize(camera,vWidth,vHeight);
+        }
 
         Camera.Parameters parameters = camera.getParameters();
         camera.setDisplayOrientation(ScanUtils.configureCameraAngle((Activity) context));
@@ -417,7 +419,7 @@ public class ScanSurfaceView extends FrameLayout implements SurfaceHolder.Callba
         vWidth = resolveSize(getSuggestedMinimumWidth(), widthMeasureSpec);
         vHeight = resolveSize(getSuggestedMinimumHeight(), heightMeasureSpec);
         setMeasuredDimension(vWidth, vHeight);
-        previewSize = ScanUtils.getOptimalPreviewSize(camera, vWidth, vHeight);
+        previewSize = ScanUtils.INSTANCE.getOptimalPreviewSize(camera, vWidth, vHeight);
     }
 
     @SuppressWarnings("SuspiciousNameCombination")
