@@ -1,14 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.chibatching.kotpref:initializer:2.11.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/efe2634afcf46592c572678757d36f2d/jetified-initializer-2.11.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/efe2634afcf46592c572678757d36f2d/jetified-initializer-2.11.0/res" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/8f94585b7f79df68121d101cfa5c6e02/jetified-initializer-2.11.0/AndroidManifest.xml" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/8f94585b7f79df68121d101cfa5c6e02/jetified-initializer-2.11.0/jars/classes.jar!/" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/8f94585b7f79df68121d101cfa5c6e02/jetified-initializer-2.11.0/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/initializer/2.11.0/bfc369ed43e262f70aa510b15dd5c62b60ecac82/initializer-2.11.0-javadoc.jar!/" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/initializer/2.11.0/bfc369ed43e262f70aa510b15dd5c62b60ecac82/initializer-2.11.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/initializer/2.11.0/f39de030497e9040023c06ab11cf56fd1b1806b7/initializer-2.11.0-sources.jar!/" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.chibatching.kotpref/initializer/2.11.0/f39de030497e9040023c06ab11cf56fd1b1806b7/initializer-2.11.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "824996244177-g6o7j254hvti0idk3sp08mkfjuog4678.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.iot.lab.bitscan",
+            "certificate_hash": "970acc6e2abc60f9f1657f15793d9639acd6a798"
+          }
+        },
+        {
           "client_id": "824996244177-im5fh9u6jgtgk8uhuch0rur14qfp87mv.apps.googleusercontent.com",
           "client_type": 3
         }

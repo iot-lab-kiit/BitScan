@@ -23,4 +23,45 @@
         android:text="Logout"
        android:layout_below="@id/googleUsername"
         android:layout_marginTop="30dp"/>
+    <!--region Temporary Section-->
+<!--    <Button-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/addNewDocumentBtn"-->
+<!--        android:text="Add"-->
+<!--        android:layout_below="@id/googleLogoutBtn"-->
+<!--        android:layout_marginTop="30dp"/>-->
+
+<!--    <Button-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/retrieveAllDocumentBtn"-->
+<!--        android:text="Retrieve All"-->
+<!--        android:layout_below="@id/addNewDocumentBtn"-->
+<!--        android:layout_marginTop="30dp"/>-->
+
+<!--    <Button-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/retrieveDocumentBtn"-->
+<!--        android:text="Retrieve"-->
+<!--        android:layout_below="@id/retrieveAllDocumentBtn"-->
+<!--        android:layout_marginTop="30dp"/>-->
+
+<!--    <Button-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/deleteDocumentBtn"-->
+<!--        android:text="Delete"-->
+<!--        android:layout_below="@id/retrieveDocumentBtn"-->
+<!--        android:layout_marginTop="30dp"/>-->
+    <!--endregion-->
 </RelativeLayout>
