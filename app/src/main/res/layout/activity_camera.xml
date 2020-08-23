@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CameraActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_menu_icon"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="13dp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/camera_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_circle_2" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="66dp"
+                android:layout_height="69dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_circle_1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/flash_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginBottom="32dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_flash_auto_white_18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/camera_click" />
+
+        <ImageButton
+            android:id="@+id/gallery_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="32dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/camera_click"
+            app:srcCompat="@drawable/ic_gallery_white" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/camera_click"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:clipToPadding="true"
+                android:dividerPadding="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/book_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#000000"
+                    android:padding="10dp"
+                    android:text="Book"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/form_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#000000"
+                    android:padding="10dp"
+                    android:text="Form"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/document_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#000000"
+                    android:padding="10dp"
+                    android:text="Document"
+                    android:textColor="#FFFFFF" />
+
+
+                <Button
+                    android:id="@+id/business_card_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#000000"
+                    android:padding="10dp"
+                    android:text="Business Card"
+                    android:textColor="#FFFFFF" />
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

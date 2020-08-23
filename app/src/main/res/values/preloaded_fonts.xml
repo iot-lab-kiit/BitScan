@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+<<<<<<< HEAD
         <item>@font/ubuntu</item>
         <item>@font/ubuntu_light</item>
     </array>
 </resources>
+=======
+        <item>@font/amaranth</item>
+        <item>@font/brawler</item>
+        <item>@font/ubuntu</item>
+        <item>@font/ubuntu_light</item>
+    </array>
+</resources>
+>>>>>>> dev_aaryaman

@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-common:19.3.0@aar">
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/e906d9a56743ff9fbb0d065b4fd9606b/jetified-firebase-common-19.3.0/AndroidManifest.xml" />
       <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/e906d9a56743ff9fbb0d065b4fd9606b/jetified-firebase-common-19.3.0/jars/classes.jar!/" />
       <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/e906d9a56743ff9fbb0d065b4fd9606b/jetified-firebase-common-19.3.0/res" />
@@ -10,6 +11,17 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common/19.3.0/f08fd907064524e4e418b886635e597530f855fc/firebase-common-19.3.0-sources.jar!/" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/786a7fbaf32c845d9a573b06aab0b990/jetified-firebase-common-19.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/786a7fbaf32c845d9a573b06aab0b990/jetified-firebase-common-19.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/786a7fbaf32c845d9a573b06aab0b990/jetified-firebase-common-19.3.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common/19.3.0/8c633ce718daf595bb05a0180d299f0034cbe97e/firebase-common-19.3.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common/19.3.0/f08fd907064524e4e418b886635e597530f855fc/firebase-common-19.3.0-sources.jar!/" />
+>>>>>>> dev_aaryaman
     </SOURCES>
   </library>
 </component>

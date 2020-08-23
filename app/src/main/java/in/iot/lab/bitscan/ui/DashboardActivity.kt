@@ -1,6 +1,7 @@
 package `in`.iot.lab.bitscan.ui
 
 import `in`.iot.lab.bitscan.R
+<<<<<<< HEAD
 import `in`.iot.lab.bitscan.data.NotesDatabase
 import `in`.iot.lab.bitscan.entities.Note
 import `in`.iot.lab.bitscan.entities.Page
@@ -10,11 +11,16 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+=======
+import android.content.Intent
+import android.os.Bundle
+>>>>>>> dev_aaryaman
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+<<<<<<< HEAD
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.coroutines.launch
@@ -22,6 +28,12 @@ import kotlinx.coroutines.runBlocking
 
 
 class DashboardActivity : AppCompatActivity(){
+=======
+import kotlinx.android.synthetic.main.activity_dashboard.*
+
+
+class DashboardActivity : AppCompatActivity() {
+>>>>>>> dev_aaryaman
     private lateinit var mAuth: FirebaseAuth
     private lateinit var  googleSignInClient: GoogleSignInClient
 
@@ -29,7 +41,10 @@ class DashboardActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
+<<<<<<< HEAD
         //region Google Authentication
+=======
+>>>>>>> dev_aaryaman
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser;
         googleUsername.text = currentUser?.displayName;
@@ -44,6 +59,7 @@ class DashboardActivity : AppCompatActivity(){
         googleLogoutBtn.setOnClickListener {
             signOut()
         }
+<<<<<<< HEAD
         //endregion
 
         // region Temporary Section
@@ -64,12 +80,15 @@ class DashboardActivity : AppCompatActivity(){
 //            deleteAll()
 //        }
         //endregion
+=======
+>>>>>>> dev_aaryaman
     }
 
     private fun signOut() {
         //Sign out from from the Auth as well as Google Client
         mAuth.signOut()
         googleSignInClient.signOut()
+<<<<<<< HEAD
         val mainActivityIntent = Intent(this,MainActivity::class.java)
         startActivity(mainActivityIntent);
         finish()
@@ -142,4 +161,10 @@ class DashboardActivity : AppCompatActivity(){
 //        GetNotesTask().execute()
 //    }
     //endregion
+=======
+        val mainActivityIntent = Intent(this,   MainActivity::class.java)
+        startActivity(mainActivityIntent);
+        finish()
+    }
+>>>>>>> dev_aaryaman
 }

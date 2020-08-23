@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+<<<<<<< HEAD
+=======
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+>>>>>>> dev_aaryaman
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -13,7 +17,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
+<<<<<<< HEAD
 
+=======
+lateinit var googleId: GoogleSignInAccount
+>>>>>>> dev_aaryaman
 class SignInActivity : AppCompatActivity() {
 
     companion object{
@@ -31,8 +39,13 @@ class SignInActivity : AppCompatActivity() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
+<<<<<<< HEAD
             .build()
 
+=======
+            .requestProfile()
+            .build()
+>>>>>>> dev_aaryaman
         googleSignInClient = GoogleSignIn.getClient(this,gso)
 
         mAuth = FirebaseAuth.getInstance()
@@ -64,11 +77,21 @@ class SignInActivity : AppCompatActivity() {
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)!!
+<<<<<<< HEAD
                     Log.d("SignInActivity", "firebaseAuthWithGoogle:" + account.id)
                     firebaseAuthWithGoogle(account.idToken!!)
                 } catch (e: ApiException) {
                     // Google Sign In failed, update UI appropriately
                     Log.w("SignInActivity", "Google Sign-In failed")
+=======
+                    googleId = account
+                    Log.d("SignInActivity", "firebaseAuthWithGoogle:" + account.id)
+                    firebaseAuthWithGoogle(account.idToken!!)
+                    Log.e("SignInActivity", "Google Sign-In failed")
+                } catch (e: ApiException) {
+                    // Google Sign In failed, update UI appropriately
+                    Log.e("SignInActivity", "Google Sign-In Success")
+>>>>>>> dev_aaryaman
                 }
             }
             else {
@@ -95,8 +118,12 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun signInSkip(){
+<<<<<<< HEAD
         val dashboardIntent = Intent(this,DashboardActivity::class.java)
         startActivity(dashboardIntent);
+=======
+        startActivity(Intent(this, MainActivity::class.java))
+>>>>>>> dev_aaryaman
         finish()
     }
 }
