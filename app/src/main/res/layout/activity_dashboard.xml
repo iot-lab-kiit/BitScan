@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DashboardActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleUsername"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_centerVertical="true"/>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleLogoutBtn"
+        android:text="Logout"
+       android:layout_below="@id/googleUsername"
+        android:layout_marginTop="30dp"/>
+</RelativeLayout>

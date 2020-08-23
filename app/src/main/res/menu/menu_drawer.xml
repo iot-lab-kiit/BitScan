@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:id="@+id/one" android:menuCategory="container">
+        <item android:title="Scans" />
+        <item android:title="About" />
+        <item android:title="Settings" />
+    </group>
+    <group android:id="@+id/two">
+        <item android:title="Help" />
+        <item android:title="Rate App"/>
+    </group>
+    <group android:id="@+id/three">
+        <item android:title="Share App" />
+    </group>
+
+
+</menu>
