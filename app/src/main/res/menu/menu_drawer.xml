@@ -2,18 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <group android:id="@+id/one" android:menuCategory="container">
-        <item android:title="Scans" />
-        <item android:title="About" />
-        <item android:title="Settings" />
-    </group>
-    <group android:id="@+id/two">
-        <item android:title="Help" />
-        <item android:title="Rate App"/>
-    </group>
-    <group android:id="@+id/three">
-        <item android:title="Share App" />
+    <group android:id="@+id/a" >
+        <item android:title="Scans" android:icon="@drawable/ic_cam" />
+        <item android:title="About" android:icon="@drawable/ic_icons8_about" />
+        <item android:title="Settings" android:icon="@drawable/ic_baseline_settings_24"/>
     </group>
 
+    <group android:id="@+id/b">
+        <item android:title="Help" android:icon="@drawable/icons8_help_32" />
+        <item android:title="Rate App" android:icon="@drawable/ic_star"/>
+    </group>
+
+    <group android:id="@+id/c">
+        <item android:title="Share App" android:icon="@drawable/ic_baseline_share_24"/>
+    </group>
 
 </menu>

@@ -9,7 +9,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view4"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical|start"
         android:background="#F7F3F2"
@@ -19,7 +19,7 @@
         android:outlineProvider="background"
         android:outlineSpotShadowColor="@color/colorPrimary"
         app:itemTextAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:itemTextColor="#FFFFFF"
+        app:itemTextColor="#000"
         app:menu="@menu/menu_drawer"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
