@@ -1,73 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-=======
->>>>>>> dev_aaryaman
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundGravity="right"
+    android:id="@+id/nav_drawer"
     tools:context=".ui.DashboardActivity">
 
-    <TextView
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|start"
+        android:background="#F7F3F2"
+        android:elevation="10dp"
+        app:headerLayout="@layout/menu_header"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:outlineProvider="background"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:itemTextColor="#000"
+        app:menu="@menu/menu_drawer"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/googleUsername"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_centerVertical="true"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/googleLogoutBtn"
-        android:text="Logout"
-       android:layout_below="@id/googleUsername"
-        android:layout_marginTop="30dp"/>
-<<<<<<< HEAD
-    <!--region Temporary Section-->
-<!--    <Button-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/addNewDocumentBtn"-->
-<!--        android:text="Add"-->
-<!--        android:layout_below="@id/googleLogoutBtn"-->
-<!--        android:layout_marginTop="30dp"/>-->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            app:buttonGravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-<!--    <Button-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/retrieveAllDocumentBtn"-->
-<!--        android:text="Retrieve All"-->
-<!--        android:layout_below="@id/addNewDocumentBtn"-->
-<!--        android:layout_marginTop="30dp"/>-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-<!--    <Button-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/retrieveDocumentBtn"-->
-<!--        android:text="Retrieve"-->
-<!--        android:layout_below="@id/retrieveAllDocumentBtn"-->
-<!--        android:layout_marginTop="30dp"/>-->
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_menu_icon" />
 
-<!--    <Button-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/deleteDocumentBtn"-->
-<!--        android:text="Delete"-->
-<!--        android:layout_below="@id/retrieveDocumentBtn"-->
-<!--        android:layout_marginTop="30dp"/>-->
-    <!--endregion-->
-=======
->>>>>>> dev_aaryaman
-</RelativeLayout>
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:foregroundGravity="right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_search" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="290dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_emptyscreenillustration1" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Click on the Camera \n or import pictures \n to start making your PDF"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <View
+            android:id="@+id/floating_view"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="31dp"
+            android:background="@drawable/fab_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        </View>
+
+        <ImageButton
+            android:id="@+id/camera_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:fadeScrollbars="false"
+            android:src="@drawable/ic_cam"
+            app:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gallery_btn" />
+
+        <ImageButton
+            android:id="@+id/gallery_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:fadeScrollbars="false"
+            android:src="@drawable/ic_gallery"
+            app:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/floating_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+

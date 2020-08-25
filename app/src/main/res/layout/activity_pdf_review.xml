@@ -85,11 +85,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="529dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="93dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

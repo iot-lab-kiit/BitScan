@@ -20,9 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.SignInActivity"/>
         <activity android:name=".ui.DashboardActivity"/>
+        <activity android:name=".ui.CameraActivity"/>
+        <activity android:name=".ui.PageReviewActivity"/>
+        <activity android:name=".ui.PdfReviewActivity"/>
         <activity android:name=".ui.ScanActivity"/>
         <meta-data
             android:name="preloaded_fonts"

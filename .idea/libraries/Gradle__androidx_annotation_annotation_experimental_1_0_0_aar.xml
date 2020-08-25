@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.annotation:annotation-experimental:1.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/541c09a69b824cc7c223abe4277f4942/jetified-annotation-experimental-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/541c09a69b824cc7c223abe4277f4942/jetified-annotation-experimental-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/541c09a69b824cc7c223abe4277f4942/jetified-annotation-experimental-1.0.0/res" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/f420e0ef4e34c50858a9550ad27d6842/jetified-annotation-experimental-1.0.0/AndroidManifest.xml" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/f420e0ef4e34c50858a9550ad27d6842/jetified-annotation-experimental-1.0.0/jars/classes.jar!/" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/f420e0ef4e34c50858a9550ad27d6842/jetified-annotation-experimental-1.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-experimental/1.0.0/2408f6cb8f31ffabdd88e1365f82914c251e44dc/annotation-experimental-1.0.0-sources.jar!/" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-experimental/1.0.0/2408f6cb8f31ffabdd88e1365f82914c251e44dc/annotation-experimental-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
