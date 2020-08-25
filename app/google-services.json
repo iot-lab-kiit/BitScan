@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "824996244177",
+    "firebase_url": "https://bitscan-36049.firebaseio.com",
+    "project_id": "bitscan-36049",
+    "storage_bucket": "bitscan-36049.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824996244177:android:5ef39079fb71c46418b3f0",
+        "android_client_info": {
+          "package_name": "in.iot.lab.bitscan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824996244177-im5fh9u6jgtgk8uhuch0rur14qfp87mv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTfX2TQs5k8Co-aaisvwXeU3X9jaPVOLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824996244177-im5fh9u6jgtgk8uhuch0rur14qfp87mv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
