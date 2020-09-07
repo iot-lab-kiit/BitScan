@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.recyclerview:recyclerview:1.1.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1d415b99160e30c1d426d06fdfd35b1d/recyclerview-1.1.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1d415b99160e30c1d426d06fdfd35b1d/recyclerview-1.1.0/AndroidManifest.xml" />
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1d415b99160e30c1d426d06fdfd35b1d/recyclerview-1.1.0/jars/classes.jar!/" />
+      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1d415b99160e30c1d426d06fdfd35b1d/recyclerview-1.1.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

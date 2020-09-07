@@ -1,3 +1,4 @@
 include ':app'
 rootProject.name = "BitScan"
 include ':java'
+include ':java'
