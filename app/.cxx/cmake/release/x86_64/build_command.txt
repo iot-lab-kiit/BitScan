@@ -1,8 +1,8 @@
 Executable : C:\Users\KIIT\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
 arguments : 
--HC:\Users\KIIT\AndroidStudioProjects\BitScan\app\src\main\cpp
+-HC:\Users\KIIT\AndroidStudioProjects\BitScan-master\app\src\main\cpp
 -DCMAKE_CXX_FLAGS=-std=c++11
--DCMAKE_FIND_ROOT_PATH=C:\Users\KIIT\AndroidStudioProjects\BitScan\app\.cxx\cmake\release\prefab\x86_64\prefab
+-DCMAKE_FIND_ROOT_PATH=C:\Users\KIIT\AndroidStudioProjects\BitScan-master\app\.cxx\cmake\release\prefab\x86_64\prefab
 -DCMAKE_BUILD_TYPE=Release
 -DCMAKE_TOOLCHAIN_FILE=C:\Users\KIIT\AppData\Local\Android\Sdk\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
 -DANDROID_ABI=x86_64
@@ -11,12 +11,12 @@ arguments :
 -DCMAKE_ANDROID_ARCH_ABI=x86_64
 -DCMAKE_ANDROID_NDK=C:\Users\KIIT\AppData\Local\Android\Sdk\ndk\21.0.6113669
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\KIIT\AndroidStudioProjects\BitScan\app\build\intermediates\cmake\release\obj\x86_64
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\KIIT\AndroidStudioProjects\BitScan-master\app\build\intermediates\cmake\release\obj\x86_64
 -DCMAKE_MAKE_PROGRAM=C:\Users\KIIT\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=21
 -DANDROID_STL=c++_shared
--BC:\Users\KIIT\AndroidStudioProjects\BitScan\app\.cxx\cmake\release\x86_64
+-BC:\Users\KIIT\AndroidStudioProjects\BitScan-master\app\.cxx\cmake\release\x86_64
 -GNinja
 jvmArgs : 
 
