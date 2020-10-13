@@ -7,12 +7,12 @@ import androidx.room.*
 
 @Dao
 interface NoteDao {
-    @Query("SELECT * FROM notes ORDER BY note_id")
+    @Query("SELECT * FROM notes ORDER BY noteID")
     fun getAllNotes(): LiveData<List<Note>>
 
     @Transaction
-    @Query("SELECT * FROM notes WHERE note_id =:noteId")
-    fun getAllPages(noteId: Int): Note
+    @Query("SELECT * FROM notes WHERE noteID =:noteId")
+    fun getNote(noteId: Int): Note
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note: Note)

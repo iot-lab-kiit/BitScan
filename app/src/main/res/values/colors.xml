@@ -12,4 +12,9 @@
     <color name="red">#F72C1E</color>
     <color name="crop_color">#2C2A2A</color>
     <color name="colorBlackThirtyFivePercentAlpha">#59000000</color>
+
+    <color name="FadedBlack">#2E2C2C</color>
+    <color name="OffWhite">#6A6969</color>
+
+    <color name="documentNameHint">#AEA6A6</color>
 </resources>

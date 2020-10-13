@@ -5,20 +5,14 @@ import androidx.room.*
 import java.util.*
 
 @Entity(tableName = "notes")
-data class Note(
-    @PrimaryKey(autoGenerate = true)
-    var note_id: Int = 0,
+class Note(
     @ColumnInfo(name = "title") var title: String,
     @ColumnInfo(name = "dateModified") var dateModified: String?,
     @ColumnInfo(name = "onCloud") var onCloud: Boolean,
-    @ColumnInfo(name="pageData") var pageData: String
-)
-//
-//data class NoteWithPage(
-//    @Embedded val note: Note,
-//    @Relation(
-//        parentColumn = "note_id",
-//        entityColumn = "pageNumber"
-//    )
-//    val page: List<Page>
-//)
+    @ColumnInfo(name="thumbnailPath") var thumbnail: String,
+    @ColumnInfo(name="pageData") var pageData: String,
+    @ColumnInfo(name="pdfPath") var pdfPath: String
+) {
+    @PrimaryKey(autoGenerate = true)
+    var noteID: Int = 0
+}
