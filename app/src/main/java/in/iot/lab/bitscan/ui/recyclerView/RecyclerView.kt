@@ -4,32 +4,41 @@ import `in`.iot.lab.bitscan.R
 import `in`.iot.lab.bitscan.data.NotesDatabase
 import `in`.iot.lab.bitscan.entities.Note
 import `in`.iot.lab.bitscan.entities.Page
+import `in`.iot.lab.bitscan.ui.CameraActivity
 import `in`.iot.lab.bitscan.ui.DashboardActivity
+import `in`.iot.lab.bitscan.ui.PageReviewActivity
 import `in`.iot.lab.bitscan.util.Convertors
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.graphics.pdf.PdfDocument
 import android.graphics.pdf.PdfDocument.PageInfo
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.mikepenz.fastadapter.FastAdapter
+import com.mikepenz.fastadapter.IAdapter
+import com.mikepenz.fastadapter.IItem
 import com.mikepenz.fastadapter.adapters.ItemAdapter
 import com.mikepenz.fastadapter.drag.ItemTouchCallback
 import com.mikepenz.fastadapter.drag.SimpleDragCallback
 import com.mikepenz.fastadapter.drag.SimpleDragCallback.Companion.ALL
+import com.mikepenz.fastadapter.select.getSelectExtension
 import com.mikepenz.fastadapter.utils.DragDropUtil
 import kotlinx.android.synthetic.main.activity_recycler_view.*
+import kotlinx.android.synthetic.main.delete_dialog_layout.*
+import kotlinx.android.synthetic.main.delete_dialog_layout.view.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.io.*
@@ -40,54 +49,82 @@ import kotlin.collections.ArrayList
 
 class RecyclerView : AppCompatActivity() {
 
-    lateinit var pageList : ArrayList<ListObject>
-    lateinit var pageMap : HashMap<Int, Page>
-    var id: Int = -1
-    var fetch:Boolean = false
+    private lateinit var db: NotesDatabase
+    lateinit var pageList : MutableList<ListObject>
+    var noteID: Long = -1
+    var pageID: Long = -1
     lateinit var selectedNote: Note
-    var pdfBeingCreated: Boolean = false
+    lateinit var notePageList: MutableList<Page>
     lateinit var pdfPath: String
+    lateinit var itemAdapter: ItemAdapter<ListObject>
+    lateinit var fastAdapter: FastAdapter<ListObject>
+    var dialogURL : AlertDialog? = null
+    var backAllowed = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
+        db = NotesDatabase.getInstance(applicationContext)
+        //Check if any ID has been passed through intent
+        noteID = intent.getLongExtra("noteid", -1)
+        notePageList = ArrayList()
+        retrieveNoteByID(noteID)
 
-        val sharedPreference =  getSharedPreferences("BITSCAN_DATA", Context.MODE_PRIVATE)
-        val data: String? = sharedPreference.getString("data", null)
-        id = sharedPreference.getInt("id", -1)
-        fetch = sharedPreference.getBoolean("fetch", false)
 
-        if(fetch){
-            getNoteByID(id)
-        }
-        else if(!data.isNullOrEmpty()) {
-            pageMap = Convertors.stringToMap(data) as HashMap<Int, Page>
-            displayData()
-        }
     }
 
     private fun displayData(){
-        if(pageMap.size > 0) {
-            val itemAdapter = ItemAdapter<ListObject>()
+        if(notePageList.isNotEmpty()) {
+            if(selectedNote.title != "NULL"){
+                reorder_document_name.setText(selectedNote.title)
+            }
+
+            itemAdapter = ItemAdapter<ListObject>()
             //create the managing FastAdapter, by passing in the itemAdapter
-            val fastAdapter = FastAdapter.with(itemAdapter)
+            fastAdapter = FastAdapter.with(itemAdapter)
 
             reorder_recycler_view.apply {
                 layoutManager = GridLayoutManager(this@RecyclerView, 2)
                 adapter = fastAdapter
             }
 
-            pageList = ArrayList()
+            val selectExtension = fastAdapter.getSelectExtension()
+            selectExtension.isSelectable = true
+            selectExtension.multiSelect = true
+            selectExtension.selectOnLongClick = true
 
-            for (pageNum in pageMap.keys) {
+            fastAdapter.onClickListener = { v: View?, _: IAdapter<ListObject>, _: ListObject, position: Int ->
+                v?.let {
+                    val intent = Intent(this, PageReviewActivity::class.java)
+                    intent.putExtra("noteid", noteID)
+                    intent.putExtra("pageid", notePageList[position].pageID)
+                    startActivity(intent)
+                }
+                false
+            }
+
+            fastAdapter.onLongClickListener = { v: View?, _: IAdapter<ListObject>, _: ListObject, index: Int ->
+                v?.let {
+                    pageID = notePageList[index].pageID
+                    showDeleteDialog()
+                }
+                false
+            }
+
+
+            pageList = ArrayList()
+            var i:Int = 1
+            notePageList.forEach { page->
                 val obj = ListObject(
-                    pageMap[pageNum]?.pageData.toString(),
-                    (pageNum + 1).toString()
+                    page.data,
+                    i.toString()
                 )
+                i++;
                 pageList.add(obj)
             }
 
             itemAdapter.add(pageList)
+            fastAdapter.notifyAdapterDataSetChanged()
             reorder_recycler_view.visibility = View.VISIBLE
             reorder_empty_layout.visibility = View.GONE
             layout_document_name.visibility = View.VISIBLE
@@ -114,6 +151,8 @@ class RecyclerView : AppCompatActivity() {
         }
         reorder_progress_circular.visibility = View.GONE
 
+        reorder_add.setOnClickListener { goToCameraActivity() }
+
         reorder_back.setOnClickListener { onBackPressed() }
 
         reorder_done.setOnClickListener {
@@ -127,62 +166,75 @@ class RecyclerView : AppCompatActivity() {
         }
     }
 
+    private fun reorderItems( ){
+        if(notePageList.isEmpty()){
+            deleteNote(selectedNote)
+        }
+        else {
+            pageList = ArrayList()
+            var i = 1
+            notePageList.forEach { page ->
+                val obj = ListObject(
+                    page.data,
+                    i.toString()
+                )
+                i++;
+                pageList.add(obj)
+            }
+            itemAdapter.clear()
+            itemAdapter.add(pageList)
+            fastAdapter.notifyAdapterDataSetChanged()
+        }
+    }
+
     private fun goToDashboard() {
-        startActivity(Intent(this, DashboardActivity::class.java))
+        val intent = Intent(this, DashboardActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+        finish()
     }
 
-    private fun saveNewNote(context: Context)= runBlocking{
+    private fun modifyNote()= runBlocking{
         launch {
-            val mapData : String = Convertors.mapToString(pageMap)
-            val title = getNoteTitle()
-            val date =  getDate()
-            val note = Note(
-                title = title,
-                dateModified = date,
-                onCloud = false,
-                pageData = mapData,
-                thumbnail = pageList.get(0).imagePath,
-                pdfPath = pdfPath
-            )
-            val db = NotesDatabase.getInstance(applicationContext);
-            db.noteDao().insertNote(note);
-        }
-    }
-
-    private fun getNoteByID(id: Int) {
-        class GetNotesTask :
-            AsyncTask<Void?, Void?, Note>() {
-            override fun doInBackground(vararg params: Void?): Note {
-                return NotesDatabase.getInstance(applicationContext).noteDao().getNote(id)
-            }
-
-            @SuppressLint("SetTextI18n")
-            override fun onPostExecute(result: Note?) {
-                super.onPostExecute(result)
-                if (result != null) {
-                    selectedNote = result
-                    Log.i("Content-filter", "Fetched Data : ${result.pageData}");
-                    pageMap = Convertors.stringToMap(result.pageData) as HashMap<Int, Page>
-                    reorder_document_name.setText(selectedNote.title)
-                    displayData()
-                }
-            }
-        }
-        GetNotesTask().execute()
-    }
-
-    private fun updateNote()= runBlocking{
-        launch {
-            val mapData : String = Convertors.mapToString(pageMap)
-            val title = getNoteTitle()
-            val date =  getDate()
-            selectedNote.title = title
-            selectedNote.dateModified = date
-            selectedNote.pageData = mapData
-            selectedNote.thumbnail = pageList.get(0).imagePath
+            selectedNote.title = getNoteTitle()
+            selectedNote.dateModified = getDate()
             selectedNote.pdfPath = pdfPath
-            val db = NotesDatabase.getInstance(applicationContext);
-            db.noteDao().updateNote(selectedNote)
+            db.noteDao().insertNote(selectedNote)
+            db.noteDao().insertPages(notePageList)
+        }
+    }
+
+    private fun retrieveNoteByID(id: Long)= runBlocking{
+        launch {
+            val list = db.noteDao().getNote(id)
+            selectedNote = list[0].note
+            notePageList = list[0].pages as MutableList<Page>
+            displayData()
+        }
+    }
+
+    private fun deletePage(noteID: Long, pageID: Long)= runBlocking{
+        launch {
+            var temp = db.noteDao().getNote(noteID)
+            temp[0].note.numPages = temp[0].note.numPages - 1
+            if( temp[0].note.numPages == 0){
+                deleteNote(temp[0].note)
+            }
+            else {
+                db.noteDao().deletePage(noteID, pageID)
+
+                val list = db.noteDao().getAllPages(noteID)
+                temp[0].note.thumbnail = list[0].data
+
+                db.noteDao().insertNote(temp[0].note)
+
+                temp = db.noteDao().getNote(noteID)
+                selectedNote = temp[0].note
+                notePageList.clear()
+                notePageList = temp[0].pages as MutableList<Page>
+                reorderItems()
+            }
+
         }
     }
 
@@ -191,7 +243,7 @@ class RecyclerView : AppCompatActivity() {
         return if(str.trim().isNotEmpty()){
             str
         } else {
-            "New Document"
+            "New Document $noteID"
         }
     }
 
@@ -202,41 +254,74 @@ class RecyclerView : AppCompatActivity() {
         return sdf.format(date)
     }
 
+    private fun showDeleteDialog() {
+        if (dialogURL == null) {
+            val builder = AlertDialog.Builder(this)
+            val view: View = LayoutInflater.from(this).inflate(
+                R.layout.delete_dialog_layout,
+                layout_delete_dialog
+            )
+            builder.setView(view)
+            dialogURL = builder.create()
+            if (dialogURL!!.window != null) {
+                dialogURL!!.window!!.setBackgroundDrawable(ColorDrawable(0))
+            }
+
+            view.dialog_delete_btn.setOnClickListener {
+                dialogURL!!.dismiss()
+                deletePage(noteID, pageID)
+            }
+            view.dialog_cancel_btn.setOnClickListener { dialogURL!!.dismiss() }
+        }
+        dialogURL!!.show()
+    }
+
+    private fun deleteNote(selectedNote: Note)= runBlocking{
+        launch {
+            db.noteDao().deleteNote(selectedNote)
+            goToDashboard()
+        }
+    }
+
     private fun createPDF(){
+        backAllowed = false
         val file = getOutputFile()
         savePDF_progress_circular.visibility = View.VISIBLE
-
+        window.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
         class ConvertImageTask : AsyncTask<Void?, Void?, PdfDocument>() {
             override fun doInBackground(vararg params: Void?): PdfDocument {
-                var bitmap: Bitmap
+                var bitmap: Bitmap?
                 val document = PdfDocument()
                 val height = 1010
                 val width = 714
                 var reqH: Int
                 var reqW: Int
                 reqW = width
-                for (i in 0 until pageMap.size) {
-                    bitmap = BitmapFactory.decodeFile(pageMap[i]?.pageData);
-                    reqH = width * bitmap.height / bitmap.width
+                notePageList.forEach{ page->
+                    bitmap = Convertors.toBitmap(page.data)
+                    if(bitmap!=null) {
+                        reqH = width * bitmap!!.height / bitmap!!.width
 
-                    if (reqH < height) {
-                        bitmap = Bitmap.createScaledBitmap(bitmap, reqW, reqH, true);
-                    } else {
-                        reqH = height
-                        reqW = height * bitmap.width / bitmap.height
-                        bitmap = Bitmap.createScaledBitmap(bitmap, reqW, reqH, true);
+                        if (reqH < height) {
+                            bitmap = Bitmap.createScaledBitmap(bitmap!!, reqW, reqH, true);
+                        } else {
+                            reqH = height
+                            reqW = height * bitmap!!.width / bitmap!!.height
+                            bitmap = Bitmap.createScaledBitmap(bitmap!!, reqW, reqH, true);
+                        }
+                        val out = ByteArrayOutputStream();
+                        bitmap!!.compress(Bitmap.CompressFormat.WEBP, 50, out);
+
+                        bitmap = BitmapFactory.decodeStream(ByteArrayInputStream(out.toByteArray()));
+                        bitmap = bitmap!!.copy(Bitmap.Config.RGB_565, false);
+
+                        val pageInfo = PageInfo.Builder(reqW, reqH, 1).create()
+                        val page = document.startPage(pageInfo)
+                        val canvas: Canvas = page.canvas
+                        val rectangle = Rect(10, 10, reqW - 10, reqH - 10)
+                        canvas.drawBitmap(bitmap!!, null, rectangle, null)
+                        document.finishPage(page)
                     }
-                    val out = ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.WEBP, 50, out);
-                    bitmap = BitmapFactory.decodeStream(ByteArrayInputStream(out.toByteArray()));
-                    bitmap = bitmap.copy(Bitmap.Config.RGB_565, false);
-
-                    val pageInfo = PageInfo.Builder(reqW, reqH, 1).create()
-                    val page = document.startPage(pageInfo)
-                    val canvas: Canvas = page.canvas
-                    val rectangle = Rect(10, 10, reqW - 10, reqH - 10)
-                    canvas.drawBitmap(bitmap, null, rectangle, null)
-                    document.finishPage(page)
                 }
                 return document
             }
@@ -251,11 +336,9 @@ class RecyclerView : AppCompatActivity() {
                     document?.close()
                     fos.close()
                     savePDF_progress_circular.visibility = View.GONE
-                    if (fetch) {
-                        updateNote()
-                    } else {
-                        saveNewNote(applicationContext)
-                    }
+                    modifyNote()
+                    window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    backAllowed = true
                     goToDashboard()
                 } catch (e: IOException) {
                     e.printStackTrace()
@@ -276,6 +359,23 @@ class RecyclerView : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Error Occurred!", Toast.LENGTH_SHORT).show()
             null
+        }
+    }
+
+    private fun goToCameraActivity(){
+        val intent = Intent(this, CameraActivity::class.java)
+        intent.putExtra("noteid",noteID)
+        startActivity(intent)
+        finish()
+    }
+
+    override fun onBackPressed() {
+        if(backAllowed){
+            super.onBackPressed()
+            goToCameraActivity()
+        }
+        else {
+            Toast.makeText(applicationContext,"PDF is being created. Please Wait!",Toast.LENGTH_SHORT).show()
         }
     }
 }

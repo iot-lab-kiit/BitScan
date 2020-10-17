@@ -2,6 +2,7 @@ package `in`.iot.lab.bitscan.ui.recyclerView
 
 import `in`.iot.lab.bitscan.R
 import `in`.iot.lab.bitscan.entities.Note
+import `in`.iot.lab.bitscan.util.Convertors
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -13,6 +14,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.dashboard_card.view.*
 import kotlinx.android.synthetic.main.rv_layout.view.*
 import java.io.File
@@ -31,8 +34,12 @@ class DashboardAdapter(private val noteList: List<Note>,
     override fun onBindViewHolder(holder: DashboardViewHolder, position: Int) {
         val currentItem = noteList[position]
 
-        val uri: Uri = Uri.fromFile(File(currentItem.thumbnail))
-        Glide.with(context).load(uri).into(holder.thumbnailImageView)
+        val bitmap = Convertors.toBitmap(currentItem.thumbnail)
+        Glide.with(context)
+            .load(bitmap)
+            .apply(RequestOptions.skipMemoryCacheOf(true))
+            .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+            .into(holder.thumbnailImageView)
         holder.titleTextView.text = currentItem.title
         holder.dateTextView.text = currentItem.dateModified
     }
