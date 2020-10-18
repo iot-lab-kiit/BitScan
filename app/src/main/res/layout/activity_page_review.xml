@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
-    tools:context=".ui.PageReviewActivity">
+    tools:context=".ui.PageReviewActivity"
+    android:background="@color/FadedBlack">
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -31,26 +32,24 @@
     <ImageView
         android:id="@+id/showPageForReview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_bar2"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/page_review_bottom_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="200dp"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bottom_bar2"
+        android:id="@+id/page_review_bottom_menu"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
-
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
@@ -166,5 +165,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:id="@+id/page_review_progress_circular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar2">
 
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

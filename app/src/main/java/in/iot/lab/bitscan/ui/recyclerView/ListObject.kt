@@ -6,13 +6,15 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.view.View
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.items.AbstractItem
 import kotlinx.android.synthetic.main.rv_layout.view.*
 import java.io.File
 
 class ListObject(
-    val imagePath: String,
+    val bitmap: ByteArray?,
     val title: String
 ) : AbstractItem<ListObjectViewHolder>() {
     override val layoutRes: Int
@@ -30,14 +32,19 @@ class ListObject(
 
 class ListObjectViewHolder(itemView: View) : FastAdapter.ViewHolder<ListObject>(itemView) {
     override fun bindView(item: ListObject, payloads: List<Any>) {
-        val uri: Uri = Uri.fromFile(File(item.imagePath))
-        Glide.with(itemView.context).load(uri).into(itemView.image_bmp_view)
+        val imgBmp = item.bitmap
+        if(imgBmp != null) {
+            Glide.with(itemView.context)
+                .load(imgBmp)
+                .apply(RequestOptions.skipMemoryCacheOf(true))
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(itemView.image_bmp_view)
+        }
+
         itemView.image_title.text=item.title
     }
 
     override fun unbindView(item: ListObject) {
 
     }
-
-
 }

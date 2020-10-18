@@ -35,6 +35,8 @@ import kotlinx.coroutines.runBlocking
 class DashboardActivity : AppCompatActivity(),
                 NavigationView.OnNavigationItemSelectedListener,
                 DashboardAdapter.OnNoteClickListener{
+
+    private lateinit var db: NotesDatabase
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     lateinit var drawer : DrawerLayout
@@ -47,13 +49,15 @@ class DashboardActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+        db = NotesDatabase.getInstance(applicationContext)
+
         drawer = findViewById(R.id.nav_drawer)
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser;
         username = currentUser?.displayName.toString();
         email = currentUser?.email.toString();
         photoURL = currentUser?.photoUrl.toString()
-        noteList = ArrayList<Note>()
+        noteList = ArrayList()
 
         //We need the gso to ensure the next time user logs in, the prompt to select an email is shown again
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -62,8 +66,6 @@ class DashboardActivity : AppCompatActivity(),
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        //Clear all shared preference data
-        clearSharedPreferences()
 
         camera_btn.setOnClickListener {
             startActivity(Intent(this, CameraActivity::class.java))
@@ -112,26 +114,14 @@ class DashboardActivity : AppCompatActivity(),
         return true
     }
 
-    private fun clearSharedPreferences(){
-        val sharedPreference =  getSharedPreferences("BITSCAN_DATA", Context.MODE_PRIVATE)
-        var editor = sharedPreference.edit()
-        editor.clear()
-        editor.apply()
-    }
-
-    private fun useSharedPreference(data: String, id: Int){
-        val sharedPreference =  getSharedPreferences("BITSCAN_DATA", Context.MODE_PRIVATE)
-        val editor = sharedPreference.edit()
-        editor.putBoolean("fetch", true)
-        editor.putInt("id", id)
-        editor.apply()
-    }
-
     private fun retrieveAllNotesFromDB(){
-        val db= NotesDatabase.getInstance(applicationContext);
         db.noteDao().getAllNotes().observe(this, androidx.lifecycle.Observer {
             noteList.removeAll(noteList)
-            noteList.addAll(it)
+
+            it.forEach{NoteWithPages->
+                noteList.add(NoteWithPages.note)
+            }
+            removeEmptyNotes()
             if (noteList.size > 0) {
                 dashboard_recycler_view.adapter!!.notifyDataSetChanged()
                 dashboard_empty_layout.visibility = View.GONE
@@ -145,10 +135,10 @@ class DashboardActivity : AppCompatActivity(),
     }
 
     override fun onNoteClick(position: Int) {
-        val clickedNote : Note = noteList[position]
-        clearSharedPreferences()
-        useSharedPreference(clickedNote.pageData, clickedNote.noteID)
-        startActivity(Intent(this, RecyclerView::class.java));
+        val clickedNoteID = noteList[position].noteID
+        val intent = Intent(this, RecyclerView::class.java)
+        intent.putExtra("noteid",clickedNoteID)
+        startActivity(intent);
     }
 
     override fun onNoteDelete(position: Int) {
@@ -171,7 +161,6 @@ class DashboardActivity : AppCompatActivity(),
             view.dialog_delete_btn.setOnClickListener {
                 dialogURL!!.dismiss()
                 val clickedNote : Note = noteList[position]
-                clearSharedPreferences()
                 noteList.removeAt(position)
                 deleteNote(clickedNote)
             }
@@ -183,67 +172,13 @@ class DashboardActivity : AppCompatActivity(),
 
     private fun deleteNote(selectedNote: Note)= runBlocking{
         launch {
-            val db = NotesDatabase.getInstance(applicationContext);
             db.noteDao().deleteNote(selectedNote)
         }
     }
 
-    //region Temporary Functions for testing
-//    private fun addNewDocument(){
-//        val mainActivityIntent = Intent(this,ScanActivity::class.java)
-//        startActivity(mainActivityIntent);
-//    }
-//
-//    private fun addTempValue() = runBlocking{
-//        launch {
-//            val map = HashMap<Int, Page>();
-//            map[1] = Page(0,null,"Page 1")
-//            map[2] = Page(1,null,"Page 2")
-//
-//            val mapData : String = Convertors.mapToString(map)
-//            Log.i("Content-filter", "Adding$mapData");
-//
-//            val note = Note(0,"TestNote", null, false,pageData = mapData)
-//            val db = NotesDatabase.getInstance(applicationContext);
-//            db.noteDao().insertNote(note);
-//        }
-//    }
-//
-//
-//    @SuppressLint("SetTextI18n")
-//    private fun deleteAll() = runBlocking{
-//        launch {
-//            Log.i("Content-filter", "Deleting All");
-//            val db = NotesDatabase.getInstance(applicationContext);
-//            db.noteDao().deleteAllNotes();
-//            googleUsername.text = "Empty"
-//        }
-//    }
-//
-//    private fun getNoteByID() {
-//        class GetNotesTask :
-//            AsyncTask<Void?, Void?, Note>() {
-//            override fun doInBackground(vararg params: Void?): Note {
-//                return NotesDatabase.getInstance(applicationContext).noteDao().getAllPages(2)
-//            }
-//
-//            @SuppressLint("SetTextI18n")
-//            override fun onPostExecute(result: Note?) {
-//                super.onPostExecute(result)
-//                if (result != null) {
-//                    val res = result.title+ " "+result.note_id
-//                    val pagedata = Convertors.stringToMap(result.pageData)
-//                    googleUsername.text = res
-//                    Log.i("Content-filter", "Fetched Data : ${result.pageData}");
-//                    pagedata.forEach { (key, value) -> Log.i("Content-filter", "Page : $key = $value")}
-//                }
-//                else {
-//                    googleUsername.text = "Empty List"
-//                }
-//            }
-//        }
-//        GetNotesTask().execute()
-//    }
-    //endregion
-
+    private fun removeEmptyNotes(){
+        noteList.forEach{
+            if(it.numPages == 0) noteList.remove(it)
+        }
+    }
 }
