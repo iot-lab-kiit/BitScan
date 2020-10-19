@@ -1,15 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.bumptech.glide:glide:4.11.0@aar">
     <CLASSES>
-      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1cada7e7ebfd7219850cb0a1d3c4cd61/jetified-glide-4.11.0/AndroidManifest.xml" />
-      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1cada7e7ebfd7219850cb0a1d3c4cd61/jetified-glide-4.11.0/jars/classes.jar!/" />
-      <root url="file://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/transforms-2/files-2.1/1cada7e7ebfd7219850cb0a1d3c4cd61/jetified-glide-4.11.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1cada7e7ebfd7219850cb0a1d3c4cd61/jetified-glide-4.11.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1cada7e7ebfd7219850cb0a1d3c4cd61/jetified-glide-4.11.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1cada7e7ebfd7219850cb0a1d3c4cd61/jetified-glide-4.11.0/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.11.0/c7431a0f446d7be1d3e99914f1bfb8db403ae76a/glide-4.11.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.11.0/c7431a0f446d7be1d3e99914f1bfb8db403ae76a/glide-4.11.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://F:/Unity Editors/2019.4.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.11.0/95d42bd1c43b39d58ad2c21355c2edcba1851cc1/glide-4.11.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.11.0/95d42bd1c43b39d58ad2c21355c2edcba1851cc1/glide-4.11.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

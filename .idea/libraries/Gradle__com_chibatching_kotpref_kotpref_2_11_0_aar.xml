@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.chibatching.kotpref:kotpref:2.11.0@aar">
     <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d735247b5b5404687838a2b56554942/jetified-kotpref-2.11.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d735247b5b5404687838a2b56554942/jetified-kotpref-2.11.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d735247b5b5404687838a2b56554942/jetified-kotpref-2.11.0/res" />
     </CLASSES>

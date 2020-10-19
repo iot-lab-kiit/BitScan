@@ -1,33 +1,33 @@
 {
   "stringTable": {
-    "0": "C:/Users/KIIT/AndroidStudioProjects/BitScan/app/.cxx/cmake/release/x86_64",
+    "0": "C:/Users/KIIT/AndroidStudioProjects/BitScan-master/app/.cxx/cmake/release/x86_64",
     "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=C:/Users/KIIT/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/KIIT/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Ddummy_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -std=c++11 -O2 -DNDEBUG -fPIC"
   },
   "buildFiles": [
     "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-    "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
     "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan\\app\\.cxx\\cmake\\release\\x86_64\" clean"
+    "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\x86_64\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan\\app\\.cxx\\cmake\\release\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "dummy-lib-Release-x86_64": {
-      "buildCommand": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan\\app\\.cxx\\cmake\\release\\x86_64\" dummy-lib",
+      "buildCommand": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\x86_64\" dummy-lib",
       "buildType": "release",
       "toolchain": "1681903992",
       "abi": "x86_64",
       "artifactName": "dummy-lib",
       "files": [
         {
-          "src": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan\\app\\src\\main\\cpp\\dummy-lib.cpp",
+          "src": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\dummy-lib.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libdummy-lib.so",
+      "output": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libdummy-lib.so",
       "runtimeFiles": []
     }
   },

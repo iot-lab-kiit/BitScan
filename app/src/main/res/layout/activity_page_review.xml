@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
-    tools:context=".ui.PageReviewActivity">
+    tools:context=".ui.PageReviewActivity"
+    android:background="@color/FadedBlack">
 
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="#000000"
         app:buttonGravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,16 +29,27 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bottom_bar2"
+    <ImageView
+        android:id="@+id/showPageForReview"
         android:layout_width="match_parent"
-        android:layout_height="189dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/page_review_bottom_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/page_review_bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
-
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
@@ -100,8 +112,9 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:paddingTop="15dp"
                     android:paddingStart="15dp">
 
                     <ImageView
@@ -127,8 +140,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:paddingTop="15dp"
                     android:paddingEnd="15dp">
 
                     <ImageView
@@ -151,5 +165,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:id="@+id/page_review_progress_circular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar2">
 
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

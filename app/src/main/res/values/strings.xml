@@ -18,4 +18,15 @@
     <string name="move_away">Move Away</string>
     <string name="adjust_angle">Adjust Camera Angle</string>
     <string name="hold_still">Hold the device still</string>
+    <string name="review_empty">Clicked document images will appear here!</string>
+    <string name="page_number">Page Number</string>
+    <string name="dashboard_document_name">Document Name</string>
+    <string name="dashboard_document_date">dd/mm/yyyy</string>
+    <string name="delete_document">Delete Document</string>
+    <string name="dialog_delete_text">DELETE</string>
+    <string name="dialog_cancel_text">CANCEL</string>
+    <string name="dialog_text">Are you sure you want to delete the document?</string>
+    <string name="new_document">New Document</string>
+    <string name="save_pdf">Save PDF</string>
+    <string name="saving_pdf">Saving PDF</string>
 </resources>

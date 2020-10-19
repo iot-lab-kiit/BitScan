@@ -6,10 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.CameraActivity">
 
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="180dp"
+        app:scaleType="fillCenter" />
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="#000000"
         app:buttonGravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +42,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
         android:background="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,18 +84,18 @@
         <ImageButton
             android:id="@+id/flash_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginStart="41dp"
             android:layout_marginBottom="32dp"
             android:background="#00FFFFFF"
-            android:src="@drawable/ic_flash_auto_white_18dp"
+            android:src="@drawable/ic_flash_off_white_18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/camera_click" />
 
         <ImageButton
             android:id="@+id/gallery_btn2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="32dp"
             android:background="#00FFFFFF"

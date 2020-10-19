@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     //If the user is already signed in open dashboard else prompt to login screen
         if(user != null){
             val dashboardIntent = Intent(this, DashboardActivity::class.java)
-           startActivity(dashboardIntent);
+            startActivity(dashboardIntent)
             finish()
        }
         else {
