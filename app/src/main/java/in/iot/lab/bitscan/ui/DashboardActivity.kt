@@ -8,13 +8,17 @@ import `in`.iot.lab.bitscan.ui.recyclerView.RecyclerView
 import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
-import android.util.Patterns
-import android.view.*
-import android.widget.EditText
+import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +34,8 @@ import kotlinx.android.synthetic.main.delete_dialog_layout.view.*
 import kotlinx.android.synthetic.main.menu_header.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import java.io.File
+import java.lang.Exception
 
 
 class DashboardActivity : AppCompatActivity(),
@@ -45,11 +51,13 @@ class DashboardActivity : AppCompatActivity(),
     private lateinit var photoURL:String
     private lateinit var noteList: ArrayList<Note>
     var dialogURL : AlertDialog? = null
+    lateinit var context : Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         db = NotesDatabase.getInstance(applicationContext)
+        context = applicationContext
 
         drawer = findViewById(R.id.nav_drawer)
         mAuth = FirebaseAuth.getInstance()
@@ -118,7 +126,7 @@ class DashboardActivity : AppCompatActivity(),
         db.noteDao().getAllNotes().observe(this, androidx.lifecycle.Observer {
             noteList.removeAll(noteList)
 
-            it.forEach{NoteWithPages->
+            it.forEach { NoteWithPages ->
                 noteList.add(NoteWithPages.note)
             }
             removeEmptyNotes()
@@ -136,13 +144,49 @@ class DashboardActivity : AppCompatActivity(),
 
     override fun onNoteClick(position: Int) {
         val clickedNoteID = noteList[position].noteID
-        val intent = Intent(this, RecyclerView::class.java)
-        intent.putExtra("noteid",clickedNoteID)
-        startActivity(intent);
+        val pdfPath = noteList[position].pdfPath
+        val intent:Intent
+        intent = if(pdfPath.isEmpty()){
+            Intent(this, RecyclerView::class.java)
+        } else {
+            Intent(this, PdfReviewActivity::class.java)
+        }
+        intent.putExtra("noteid", clickedNoteID)
+        startActivity(intent)
     }
 
     override fun onNoteDelete(position: Int) {
         showDeleteDialog(position)
+    }
+
+    override fun onNoteShare(position: Int) {
+        val path = noteList[position].pdfPath;
+        if(path.isEmpty()){
+            Toast.makeText(context,"Save the PDF of the document first!",Toast.LENGTH_SHORT).show()
+        }
+        else {
+            sendPDF(noteList[position].pdfPath)
+        }
+    }
+
+    private fun sendPDF(myFilePath: String){
+        try {
+            val fileWithinMyDir = File(myFilePath)
+            val uri = FileProvider.getUriForFile(context,"in.iot.lab.bitscan",fileWithinMyDir)
+
+            val share = Intent()
+            share.action = Intent.ACTION_SEND
+            share.type = "application/pdf"
+            share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            share.putExtra(Intent.EXTRA_STREAM, uri)
+            val intent = (Intent.createChooser(share, "Send document with..."))
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        }
+        catch (e: Exception){
+            e.printStackTrace()
+            Toast.makeText(context,"PDF Error! Re-save the document PDF or try again later.",Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun showDeleteDialog(position: Int) {

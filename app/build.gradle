@@ -116,4 +116,7 @@ dependencies {
     implementation "com.mikepenz:fastadapter-extensions-swipe:${latestFastAdapterRelease}" // swipe support
     implementation "com.mikepenz:fastadapter-extensions-ui:${latestFastAdapterRelease}" // pre-defined ui components
     implementation "com.mikepenz:fastadapter-extensions-utils:${latestFastAdapterRelease}"
+
+    //PDF Viewer
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 }
