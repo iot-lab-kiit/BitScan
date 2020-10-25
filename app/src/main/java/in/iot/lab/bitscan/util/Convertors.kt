@@ -27,7 +27,7 @@ class Convertors {
 
         fun toByteArray(bitmap: Bitmap):ByteArray{
             ByteArrayOutputStream().apply {
-                bitmap.compress(CompressFormat.JPEG, 10, this)
+                bitmap.compress(CompressFormat.JPEG, 60, this)
                 return toByteArray()
             }
         }

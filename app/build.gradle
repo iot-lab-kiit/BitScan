@@ -119,4 +119,7 @@ dependencies {
 
     //PDF Viewer
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    //Image Chooser
+    implementation 'com.github.dhaval2404:imagepicker:1.7.5'
 }

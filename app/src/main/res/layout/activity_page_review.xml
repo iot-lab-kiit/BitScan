@@ -57,7 +57,7 @@
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/amaranth"
             android:gravity="center"
-            android:text="Adjust the dots to crop your picture"
+            android:text="Modify the image and press Continue"
             android:textAlignment="center"
             android:textColor="#FBFAFA"
             android:textSize="20sp"
@@ -136,14 +136,16 @@
                     android:layout_width="40dp"
                     android:layout_height="2dp"
                     android:layout_weight="1"
-                    android:background="?android:attr/listDivider" />
+                    android:background="?android:attr/listDivider"
+                    android:visibility="gone"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:paddingTop="15dp"
-                    android:paddingEnd="15dp">
+                    android:paddingEnd="15dp"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/color_img"

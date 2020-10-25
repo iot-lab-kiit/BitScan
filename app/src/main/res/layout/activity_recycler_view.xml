@@ -40,6 +40,17 @@
             android:layout_alignBottom="@id/reorder_toolbar"
             android:layout_marginStart="55dp"
             android:layout_marginBottom="5dp"
+            app:srcCompat="@drawable/ic_cam"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/reorder_add_gallery"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_alignTop="@id/reorder_toolbar"
+            android:layout_alignBottom="@id/reorder_toolbar"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="7dp"
             app:srcCompat="@drawable/ic_page" />
 
         <TextView

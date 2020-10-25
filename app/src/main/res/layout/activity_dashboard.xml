@@ -9,21 +9,6 @@
     android:foregroundGravity="right"
     tools:context=".ui.DashboardActivity">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical|start"
-        android:background="#F7F3F2"
-        android:elevation="10dp"
-        android:outlineAmbientShadowColor="@color/colorPrimary"
-        android:outlineProvider="background"
-        android:outlineSpotShadowColor="@color/colorPrimary"
-        app:headerLayout="@layout/menu_header"
-        app:itemTextAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:itemTextColor="#000"
-        app:menu="@menu/menu_drawer" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -61,7 +46,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_search" />
+                    app:srcCompat="@drawable/ic_search"
+                    android:visibility="gone"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -109,9 +95,9 @@
                 android:id="@+id/dashboard_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginBottom="?attr/actionBarSize"
                 android:nestedScrollingEnabled="false"
+                android:padding="10dp"
                 tools:listitem="@layout/dashboard_card" />
         </RelativeLayout>
 
@@ -168,6 +154,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|start"
+        android:background="#F7F3F2"
+        android:elevation="10dp"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:outlineProvider="background"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        app:headerLayout="@layout/menu_header"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:itemTextColor="#000"
+        app:menu="@menu/menu_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
 
