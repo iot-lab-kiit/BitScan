@@ -7,6 +7,7 @@ import `in`.iot.lab.bitscan.entities.Page
 import `in`.iot.lab.bitscan.ui.CameraActivity
 import `in`.iot.lab.bitscan.ui.DashboardActivity
 import `in`.iot.lab.bitscan.ui.PageReviewActivity
+import `in`.iot.lab.bitscan.ui.PdfReviewActivity
 import `in`.iot.lab.bitscan.util.Convertors
 import android.content.Intent
 import android.graphics.Bitmap
@@ -194,6 +195,14 @@ class RecyclerView : AppCompatActivity() {
         finish()
     }
 
+    private  fun showPDF(){
+        val intent = Intent(this, PdfReviewActivity::class.java)
+        intent.putExtra("noteid", noteID)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+        finish()
+    }
+
     private fun modifyNote()= runBlocking{
         launch {
             selectedNote.title = getNoteTitle()
@@ -339,7 +348,7 @@ class RecyclerView : AppCompatActivity() {
                     modifyNote()
                     window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                     backAllowed = true
-                    goToDashboard()
+                    showPDF()
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }

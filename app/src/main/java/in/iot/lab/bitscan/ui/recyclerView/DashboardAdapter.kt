@@ -58,6 +58,14 @@ class DashboardAdapter(private val noteList: List<Note>,
                     listener.onNoteDelete(position)
                 }
             }
+
+            itemView.dashboard_card_share.setOnClickListener {
+                val position = adapterPosition
+                if(position != RecyclerView.NO_POSITION) {
+                    listener.onNoteShare(position)
+                }
+            }
+
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if(position != RecyclerView.NO_POSITION) {
@@ -69,7 +77,7 @@ class DashboardAdapter(private val noteList: List<Note>,
 
     interface  OnNoteClickListener{
         fun onNoteClick(position : Int)
-
         fun onNoteDelete(position: Int)
+        fun onNoteShare(position:Int)
     }
 }
