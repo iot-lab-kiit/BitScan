@@ -171,7 +171,7 @@ class DashboardActivity : AppCompatActivity(),
         val clickedNoteID = noteList[position].noteID
         val pdfPath = noteList[position].pdfPath
         val intent:Intent
-        intent = if(pdfPath.isEmpty()){
+        intent = if(pdfPath.isEmpty() || pdfPath.toLowerCase(Locale.ROOT).trim() == "null" ||pdfPath.toLowerCase(Locale.ROOT).trim() == "unavailable"){
             Intent(this, RecyclerView::class.java)
         } else {
             Intent(this, PdfReviewActivity::class.java)
