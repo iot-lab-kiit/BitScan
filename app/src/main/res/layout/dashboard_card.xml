@@ -64,6 +64,15 @@
                 android:layout_alignParentBottom="true"
                 android:layout_margin="10dp"
                 android:src="@drawable/ic_delete"/>
+
+            <ImageView
+                android:id="@+id/dashboard_card_share"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_toStartOf="@id/dashboard_card_delete"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_share"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
