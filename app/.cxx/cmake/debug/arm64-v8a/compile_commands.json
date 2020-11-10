@@ -1,7 +1,7 @@
 [
 {
-  "directory": "C:/Users/KIIT/AndroidStudioProjects/BitScan-master/app/.cxx/cmake/debug/arm64-v8a",
-  "command": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=C:/Users/KIIT/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/KIIT/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Ddummy_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\dummy-lib.dir\\dummy-lib.cpp.o -c C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\dummy-lib.cpp",
-  "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\dummy-lib.cpp"
+  "directory": "D:/Programs/BitScan/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=C:/Users/acer/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/acer/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Ddummy_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\dummy-lib.dir\\dummy-lib.cpp.o -c D:\\Programs\\BitScan\\app\\src\\main\\cpp\\dummy-lib.cpp",
+  "file": "D:\\Programs\\BitScan\\app\\src\\main\\cpp\\dummy-lib.cpp"
 }
 ]

@@ -36,14 +36,14 @@
             android:id="@+id/menu_bar_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IoT Lab"
+            android:text="Anonymous"
             android:textSize="22sp"/>
 
         <TextView
             android:id="@+id/menu_bar_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="iotlab@kiit.ac.in"
+            android:text="anonymous@gmail.com"
             android:textSize="18sp"/>
 
     </LinearLayout>

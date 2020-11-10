@@ -1,2 +1,2 @@
-ninja: Entering directory `C:\Users\KIIT\AndroidStudioProjects\BitScan-master\app\.cxx\cmake\debug\arm64-v8a'
+ninja: Entering directory `D:\Programs\BitScan\app\.cxx\cmake\debug\arm64-v8a'
 ninja: no work to do.
