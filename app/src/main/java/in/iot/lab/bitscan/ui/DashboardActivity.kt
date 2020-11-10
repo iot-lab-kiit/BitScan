@@ -12,6 +12,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -31,6 +32,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import hotchemi.android.rate.AppRate
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.delete_dialog_layout.*
 import kotlinx.android.synthetic.main.delete_dialog_layout.view.*
@@ -119,6 +121,23 @@ class DashboardActivity : AppCompatActivity(),
                     signOut()
                     true
                 }
+                R.id.shareApp -> {
+                    val intent= Intent()
+                    intent.action=Intent.ACTION_SEND
+                    intent.putExtra(Intent.EXTRA_TEXT,"Hey Check out Bitscan, a free and secure scanner: https://play.google.com/store/apps/details?id=$packageName")
+                    intent.type="text/plain"
+                    startActivity(Intent.createChooser(intent,"Share To:"))
+                    true
+                }
+                R.id.rateApp -> {
+                    try {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName")))
+                    }
+                    catch (e : Exception){
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$packageName")))
+                    }
+                    true
+                }
                 else -> {
                     true
                 }
@@ -129,6 +148,15 @@ class DashboardActivity : AppCompatActivity(),
         dashboard_recycler_view.layoutManager = LinearLayoutManager(this)
 
         retrieveAllNotesFromDB()
+
+        //Rate Application
+        AppRate.with(this)
+            .setInstallDays(1)
+            .setLaunchTimes(4)
+            .setRemindInterval(2)
+            .monitor();
+
+        AppRate.showRateDialogIfMeetsConditions(this);
     }
 
     private fun signOut() {

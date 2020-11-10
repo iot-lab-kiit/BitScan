@@ -6,16 +6,16 @@
         <item android:title="Scans" android:icon="@drawable/ic_cam" />
         <item android:title="About" android:icon="@drawable/ic_icons8_about" />
         <item android:title="Settings" android:icon="@drawable/ic_baseline_settings_24"/>
-        <item android:title="Logout" android:icon="@drawable/ic_baseline_settings_24" android:id="@+id/logout"/>
+        <item android:title="Logout" android:icon="@drawable/ic_logout" android:id="@+id/logout"/>
     </group>
 
     <group android:id="@+id/b">
         <item android:title="Help" android:icon="@drawable/icons8_help_32" />
-        <item android:title="Rate App" android:icon="@drawable/ic_star"/>
+        <item android:title="Rate App" android:icon="@drawable/ic_star" android:id="@+id/rateApp"/>
     </group>
 
     <group android:id="@+id/c">
-        <item android:title="Share App" android:icon="@drawable/ic_baseline_share_24"/>
+        <item android:title="Share App" android:icon="@drawable/ic_baseline_share_24" android:id="@+id/shareApp"/>
     </group>
 
 </menu>
