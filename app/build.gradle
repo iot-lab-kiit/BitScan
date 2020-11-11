@@ -66,7 +66,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     //Firebase
-    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation project(path: ':java')
 
@@ -119,4 +119,10 @@ dependencies {
 
     //PDF Viewer
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    //Image Chooser
+    implementation 'com.github.dhaval2404:imagepicker:1.7.5'
+
+    //Android Rate
+    implementation 'com.github.hotchemi:android-rate:1.0.1'
 }

@@ -29,4 +29,5 @@
     <string name="new_document">New Document</string>
     <string name="save_pdf">Save PDF</string>
     <string name="saving_pdf">Saving PDF</string>
+    <string name="appname">Bitscan</string>
 </resources>
