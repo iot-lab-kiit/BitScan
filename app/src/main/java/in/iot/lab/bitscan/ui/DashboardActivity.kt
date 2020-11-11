@@ -138,6 +138,18 @@ class DashboardActivity : AppCompatActivity(),
                     }
                     true
                 }
+                R.id.privacyPolicy ->{
+                    val intent= Intent(this, PrivacyAndAbout::class.java)
+                    intent.putExtra("page", "privacy")
+                    startActivity(intent)
+                    true
+                }
+                R.id.about ->{
+                    val intent= Intent(this, PrivacyAndAbout::class.java)
+                    intent.putExtra("page", "about")
+                    startActivity(intent)
+                    true
+                }
                 else -> {
                     true
                 }

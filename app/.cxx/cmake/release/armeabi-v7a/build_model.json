@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\armeabi-v7a",
-    "cmakeServerLogFile": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\armeabi-v7a\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "D:\\Programs\\BitScan\\app\\.cxx\\cxx\\release\\armeabi-v7a",
+    "cmakeArtifactsBaseFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\armeabi-v7a",
+    "cmakeServerLogFile": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\armeabi-v7a\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cxx\\release\\armeabi-v7a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,9 +15,9 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\armeabi-v7a",
-      "cmakeToolchain": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cmakeExecutable": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "buildRoot": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\armeabi-v7a",
+      "cmakeToolchain": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
         {
           "name": "CMAKE_CXX_FLAGS",
@@ -25,7 +25,7 @@
         },
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\prefab\\armeabi-v7a\\prefab"
+          "value": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\prefab\\armeabi-v7a\\prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -33,7 +33,7 @@
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
+          "value": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -41,7 +41,7 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+          "value": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
         },
         {
           "name": "ANDROID_PLATFORM",
@@ -53,7 +53,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+          "value": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -61,11 +61,11 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "D:\\Programs\\BitScan\\app\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a"
+          "value": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
-          "value": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+          "value": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
         },
         {
           "name": "CMAKE_SYSTEM_NAME",
@@ -82,14 +82,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\armeabi-v7a",
+  "cxxBuildFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\armeabi-v7a",
   "info": {
     "abi": "ARMEABI_V7A",
     "bitness": 32,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\armeabi-v7a",
+  "originalCxxBuildFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\armeabi-v7a",
   "variant": {
     "buildSystemArgumentList": [
       "-DANDROID_STL\u003dc++_shared"
@@ -104,24 +104,24 @@
     "module": {
       "buildSystem": "CMAKE",
       "cmake": {
-        "cmakeExe": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "cmakeExe": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
         "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        "ninjaExe": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
-      "cmakeToolchainFile": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "D:\\Programs\\BitScan\\app\\.cxx",
+      "cmakeToolchainFile": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "D:\\Programs\\BitScan\\app\\build\\intermediates",
-      "makeFile": "D:\\Programs\\BitScan\\app\\src\\main\\cpp\\CMakeLists.txt",
-      "moduleBuildFile": "D:\\Programs\\BitScan\\app\\build.gradle",
-      "moduleRootFolder": "D:\\Programs\\BitScan\\app",
+      "intermediatesFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\build\\intermediates",
+      "makeFile": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+      "moduleBuildFile": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\build.gradle",
+      "moduleRootFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
+      "ndkFolder": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI_V7A",
@@ -178,29 +178,29 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "21.0.6113669",
       "project": {
-        "compilerSettingsCacheFolder": "D:\\Programs\\BitScan\\.cxx",
-        "cxxFolder": "D:\\Programs\\BitScan\\.cxx",
+        "compilerSettingsCacheFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\.cxx",
+        "cxxFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "D:\\Programs\\BitScan",
-        "sdkFolder": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk",
+        "rootBuildGradleFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master",
+        "sdkFolder": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk",
         "isPrefabEnabled": false
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
-          "ARM64_V8A": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-          "X86": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
-          "X86_64": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+          "ARMEABI_V7A": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
         "SYSTEM": {}
       }
     },
-    "objFolder": "D:\\Programs\\BitScan\\app\\build\\intermediates\\cmake\\release\\obj",
+    "objFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\build\\intermediates\\cmake\\release\\obj",
     "variantName": "release",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -208,8 +208,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\prefab",
+    "prefabDirectory": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "D:\\Programs\\BitScan\\app\\.cxx\\cmake\\release\\prefab\\armeabi-v7a"
+  "prefabFolder": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\release\\prefab\\armeabi-v7a"
 }

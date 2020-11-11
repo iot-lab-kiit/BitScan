@@ -1,19 +1,19 @@
 {
   "buildFiles": [
-    "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
-    "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-    "D:\\Programs\\BitScan\\app\\src\\main\\cpp\\CMakeLists.txt"
+    "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Programs\\BitScan\\app\\.cxx\\cmake\\debug\\x86\" clean"
+    "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\debug\\x86\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\Programs\\BitScan\\app\\.cxx\\cmake\\debug\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\debug\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "dummy-lib-Debug-x86": {
       "artifactName": "dummy-lib",
-      "buildCommand": "C:\\Users\\acer\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Programs\\BitScan\\app\\.cxx\\cmake\\debug\\x86\" dummy-lib",
+      "buildCommand": "C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\.cxx\\cmake\\debug\\x86\" dummy-lib",
       "abi": "x86",
-      "output": "D:\\Programs\\BitScan\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libdummy-lib.so",
+      "output": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libdummy-lib.so",
       "runtimeFiles": []
     }
   }
