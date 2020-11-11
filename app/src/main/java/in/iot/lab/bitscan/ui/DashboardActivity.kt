@@ -7,6 +7,7 @@ import `in`.iot.lab.bitscan.entities.Page
 import `in`.iot.lab.bitscan.ui.recyclerView.DashboardAdapter
 import `in`.iot.lab.bitscan.ui.recyclerView.RecyclerView
 import `in`.iot.lab.bitscan.util.Convertors
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
@@ -14,6 +15,7 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -40,6 +42,8 @@ import kotlinx.android.synthetic.main.menu_header.*
 import kotlinx.android.synthetic.main.menu_header.view.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import pub.devrel.easypermissions.AppSettingsDialog
+import pub.devrel.easypermissions.EasyPermissions
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -47,7 +51,8 @@ import kotlin.collections.ArrayList
 
 
 class DashboardActivity : AppCompatActivity(),
-                DashboardAdapter.OnNoteClickListener{
+                DashboardAdapter.OnNoteClickListener, EasyPermissions.PermissionCallbacks,
+    EasyPermissions.RationaleCallbacks{
 
     private lateinit var db: NotesDatabase
     private lateinit var mAuth: FirebaseAuth
@@ -59,6 +64,10 @@ class DashboardActivity : AppCompatActivity(),
     private lateinit var noteList: ArrayList<Note>
     var dialogURL : AlertDialog? = null
     lateinit var context : Context
+
+    private val TAG = "DashBoardActivity"
+    private val RC_CAMERA_PERM = 123
+    private val RC_EXTERN_PERM = 124
 
     @SuppressLint("RtlHardcoded")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,8 +97,24 @@ class DashboardActivity : AppCompatActivity(),
 
 
         camera_btn.setOnClickListener {
-            startActivity(Intent(this, CameraActivity::class.java))
+
+            if (hasCameraPermission())
+            {
+                // Have permission, do the thing!
+                startActivity(Intent(this, CameraActivity::class.java))
+            }
+            else
+            {
+                // Ask for one permission
+                EasyPermissions.requestPermissions(
+                    this,
+                    getString(R.string.rationale_camera),
+                    RC_CAMERA_PERM,
+                    Manifest.permission.CAMERA)
+            }
         }
+
+
 
         menu.setOnClickListener{
             drawer.openDrawer(Gravity.LEFT);
@@ -99,18 +124,33 @@ class DashboardActivity : AppCompatActivity(),
         }
 
         gallery_btn.setOnClickListener {
-            ImagePicker.with(this)
-                .crop()
-                .compress(2048)
-                .galleryOnly()
-                .galleryMimeTypes(
-                    mimeTypes = arrayOf(
-                        "image/png",
-                        "image/jpg",
-                        "image/jpeg"
+
+            if (hasExternalPermissions())
+            {
+                // Have permission, do the thing!
+                ImagePicker.with(this)
+                    .crop()
+                    .compress(2048)
+                    .galleryOnly()
+                    .galleryMimeTypes(
+                        mimeTypes = arrayOf(
+                            "image/png",
+                            "image/jpg",
+                            "image/jpeg"
+                        )
                     )
-                )
-                .start(101)
+                    .start(101)
+            }
+            else
+            {
+                // Ask for one permission
+                EasyPermissions.requestPermissions(
+                    this,
+                    getString(R.string.rationale_external),
+                    RC_EXTERN_PERM,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            }
+
         }
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
@@ -283,6 +323,13 @@ class DashboardActivity : AppCompatActivity(),
         }
     }
 
+    private fun hasCameraPermission():Boolean {
+        return EasyPermissions.hasPermissions(this, Manifest.permission.CAMERA)
+    }
+    private fun hasExternalPermissions():Boolean {
+        return EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == 101) {
@@ -362,5 +409,33 @@ class DashboardActivity : AppCompatActivity(),
         val date = Calendar.getInstance().time
         val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         return sdf.format(date)
+    }
+
+    override fun onRequestPermissionsResult(requestCode:Int,
+                                            permissions:Array<String>,
+                                            grantResults:IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        // EasyPermissions handles the request result.
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
+    }
+
+    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
+        Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size)
+    }
+
+    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
+        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size)
+
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms))
+        {
+            AppSettingsDialog.Builder(this).build().show()
+        }
+    }
+
+    override fun onRationaleAccepted(requestCode:Int) {
+        Log.d(TAG, "onRationaleAccepted:" + requestCode)
+    }
+    override fun onRationaleDenied(requestCode:Int) {
+        Log.d(TAG, "onRationaleDenied:" + requestCode)
     }
 }

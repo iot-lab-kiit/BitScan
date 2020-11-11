@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <ImageView
                     android:id="@+id/menu"
                     android:layout_width="wrap_content"
@@ -145,6 +146,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="32dp"
             android:fadeScrollbars="false"
+            android:text="Camera Permission"
             android:src="@drawable/ic_cam"
             app:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -157,6 +159,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="32dp"
             android:fadeScrollbars="false"
+            android:text="External Permission"
             android:src="@drawable/ic_gallery"
             app:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
