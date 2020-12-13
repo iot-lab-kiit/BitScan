@@ -7,7 +7,10 @@ import `in`.iot.lab.bitscan.entities.Page
 import `in`.iot.lab.bitscan.ui.CameraActivity
 import `in`.iot.lab.bitscan.ui.DashboardActivity
 import `in`.iot.lab.bitscan.ui.PageReviewActivity
+import `in`.iot.lab.bitscan.ui.PdfReviewActivity
 import `in`.iot.lab.bitscan.util.Convertors
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -27,6 +30,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.IAdapter
 import com.mikepenz.fastadapter.IItem
@@ -36,6 +40,7 @@ import com.mikepenz.fastadapter.drag.SimpleDragCallback
 import com.mikepenz.fastadapter.drag.SimpleDragCallback.Companion.ALL
 import com.mikepenz.fastadapter.select.getSelectExtension
 import com.mikepenz.fastadapter.utils.DragDropUtil
+import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 import kotlinx.android.synthetic.main.delete_dialog_layout.*
 import kotlinx.android.synthetic.main.delete_dialog_layout.view.*
@@ -61,15 +66,31 @@ class RecyclerView : AppCompatActivity() {
     var dialogURL : AlertDialog? = null
     var backAllowed = true
 
+    @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
         db = NotesDatabase.getInstance(applicationContext)
+
         //Check if any ID has been passed through intent
         noteID = intent.getLongExtra("noteid", -1)
         notePageList = ArrayList()
         retrieveNoteByID(noteID)
 
+        reorder_add_gallery.setOnClickListener {
+            ImagePicker.with(this)
+                .crop()
+                .compress(2048)
+                .galleryOnly()
+                .galleryMimeTypes(
+                    mimeTypes = arrayOf(
+                        "image/png",
+                        "image/jpg",
+                        "image/jpeg"
+                    )
+                )
+                .start(101)
+        }
 
     }
 
@@ -194,6 +215,14 @@ class RecyclerView : AppCompatActivity() {
         finish()
     }
 
+    private  fun showPDF(){
+        val intent = Intent(this, PdfReviewActivity::class.java)
+        intent.putExtra("noteid", noteID)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+        finish()
+    }
+
     private fun modifyNote()= runBlocking{
         launch {
             selectedNote.title = getNoteTitle()
@@ -310,7 +339,7 @@ class RecyclerView : AppCompatActivity() {
                             bitmap = Bitmap.createScaledBitmap(bitmap!!, reqW, reqH, true);
                         }
                         val out = ByteArrayOutputStream();
-                        bitmap!!.compress(Bitmap.CompressFormat.WEBP, 50, out);
+                        bitmap!!.compress(Bitmap.CompressFormat.WEBP, 100, out);
 
                         bitmap = BitmapFactory.decodeStream(ByteArrayInputStream(out.toByteArray()));
                         bitmap = bitmap!!.copy(Bitmap.Config.RGB_565, false);
@@ -339,7 +368,7 @@ class RecyclerView : AppCompatActivity() {
                     modifyNote()
                     window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                     backAllowed = true
-                    goToDashboard()
+                    showPDF()
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -376,6 +405,42 @@ class RecyclerView : AppCompatActivity() {
         }
         else {
             Toast.makeText(applicationContext,"PDF is being created. Please Wait!",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 101) {
+            if(resultCode == Activity.RESULT_OK) {
+                val filePath: String? = ImagePicker.getFilePath(data)
+                if(filePath!=null){
+                    val bitmap = Convertors.fileToBitmap(filePath)
+                    var byteArray: ByteArray? = null
+                    if (bitmap != null) {
+                        byteArray = Convertors.toByteArray(bitmap)
+                    }
+                    if (byteArray != null) {
+                        val page = Page(pageNoteID = noteID, data = byteArray)
+                        notePageList.add(page)
+                        modifyNoteAfterFetch()
+                    }
+                }
+            } else if (resultCode == ImagePicker.RESULT_ERROR) {
+                Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun modifyNoteAfterFetch()= runBlocking{
+        launch {
+            selectedNote.title = getNoteTitle()
+            selectedNote.dateModified = getDate()
+            db.noteDao().insertNote(selectedNote)
+            db.noteDao().insertPages(notePageList)
+            notePageList.clear()
+            retrieveNoteByID(noteID)
         }
     }
 }

@@ -13,6 +13,156 @@
   },
   {
     "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\build-tools\\27.0.3\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\build-tools\\28.0.3\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\build-tools\\29.0.1\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\build-tools\\29.0.2\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\build-tools\\29.0.3\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\build-tools\\30.0.0\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\emulator\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\extras\\google\\google_play_services\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\extras\\google\\market_licensing\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\extras\\google\\usb_driver\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\extras\\intel\\Hardware_Accelerated_Execution_Manager\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\patcher\\v4\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\platform-tools\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\platforms\\android-24\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\platforms\\android-27\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\platforms\\android-28\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\platforms\\android-29\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\skiaparser\\1\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\sources\\android-29\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\system-images\\android-22\\google_apis\\x86\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\system-images\\android-24\\google_apis_playstore\\x86\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\system-images\\android-25\\google_apis\\x86\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\tools\\package.xml",
+    "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
     "message": "- CMake found in SDK at \u0027C:\\Users\\KIIT\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
     "file": "C:\\Users\\KIIT\\AndroidStudioProjects\\BitScan-master\\app\\src\\main\\cpp\\CMakeLists.txt",
     "tag": "release|x86_64"
